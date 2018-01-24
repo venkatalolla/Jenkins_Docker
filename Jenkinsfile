@@ -6,7 +6,8 @@ node {
   }
 
   stage('Build'){
-    def mvnHome = tool 'M3'
+    //def mvnHome = tool 'M3'
+    tool name: 'M3', type: 'maven'
     sh "${mvnHome}/bin/mvn clean"
   }
 }
