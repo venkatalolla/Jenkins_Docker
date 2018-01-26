@@ -13,7 +13,7 @@ node {
 
   stage('DockerBuild'){
     //withDockerRegistry([credentialsId: 'dockerhub', url: 'https://registry.hub.docker.com']){
-      def customImage = docker.build("my-image:${env.BUILD_ID}")
+      def customImage = docker.build("suryalolla/jenkins_docker:latest")
       customImage.push()
     //}
 
