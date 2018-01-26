@@ -12,8 +12,8 @@ node {
   }
 
   stage('DockerBuild'){
-    docker.image('ubuntu:16.04').inside {
-            sh "ps -ef"
+     def customImage = docker.build('myfirstdocker:${env.BUILD_ID}'){
+            customImage.push()
         }
   }
 }
