@@ -15,7 +15,7 @@ node {
     withDockerRegistry([credentialsId: 'dockerhub', url: 'https://registry.hub.docker.com']){
       def customImage = docker.build("suryalolla/jenkins_docker:latest")
       customImage.push()
-    //}
+    }
 
   }
 }
