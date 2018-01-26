@@ -12,8 +12,7 @@ node {
   }
 
   stage('DockerBuild'){
-     def customImage = docker.build('myfirstdocker:${env.BUILD_ID}'){
+     def customImage = docker.build('myfirstdocker:${env.BUILD_ID}')
             customImage.push()
-        }
   }
 }
