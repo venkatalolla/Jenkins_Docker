@@ -12,10 +12,10 @@ node {
   }
 
   stage('DockerBuild'){
-    withDockerRegistry([credentialsId: 'dockerhub', url: 'https://registry.hub.docker.com']){
+    //withDockerRegistry([credentialsId: 'dockerhub', url: 'https://hub.docker.com']){
       def customImage = docker.build("suryalolla/jenkins_docker:latest")
       customImage.push()
-    }
+    //}
 
   }
 }
