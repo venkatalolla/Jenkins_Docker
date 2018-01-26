@@ -1,6 +1,6 @@
 FROM tomcat:8.0.38
 
-COPY /target/ROOT.war /usr/local/tomcat/webapps
+ADD ROOT.war /usr/local/tomcat/webapps
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
