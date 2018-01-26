@@ -1,3 +1,7 @@
-FROM node:7-alpine
+FROM tomcat:8.0.38
 
-Run apk add -U subversion
+COPY /target/ROOT.war /home/surya/Downloads/apache-tomcat-7.0.82/webapps
+COPY docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["catalina.sh", "run"]
