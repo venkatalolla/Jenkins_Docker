@@ -10,4 +10,10 @@ node {
     tool name: 'M3', type: 'maven'
     sh "mvn clean"
   }
+
+  stage('DockerBuild'){
+    docker.image('ubuntu:16.04').inside {
+            sh "ps -ef"
+        }
+  }
 }
