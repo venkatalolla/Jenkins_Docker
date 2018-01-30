@@ -4,7 +4,7 @@
 
 stage('Demo'){
   echo 'Hello World'
-  SayHello 'Dave'
+  sayHello 'Dave'
 }
 
 node {
