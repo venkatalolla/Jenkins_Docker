@@ -1,13 +1,6 @@
 #! groovy
-
-@Library('helloWorld')_
-
-stage('Demo'){
-  echo 'Hello World'
-  helloWorld 'Dave'
-}
-
 node {
+  
   stage('checkout') {
     git url: 'https://github.com/venkatalolla/Jenkins_Docker.git'
   }
