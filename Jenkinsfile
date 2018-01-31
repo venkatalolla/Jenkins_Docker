@@ -14,8 +14,9 @@ node {
 
   stage('Build'){
     //def mvnHome = tool 'M3'
-    tool name: 'M3', type: 'maven'
-    sh "mvn clean install"
+    //tool name: 'M3', type: 'maven'
+    tool name: 'gradle', type: 'gradle'
+    sh "gradle clean install"
   }
 
   stage('DockerBuild'){
